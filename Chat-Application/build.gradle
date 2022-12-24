@@ -1,0 +1,30 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        // Make sure that you have the following two repositories
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
+
+    }
+    dependencies {
+
+        // Add the dependency for the Google services Gradle plugin
+        // classpath com.android.tools.build:gradle
+        //noinspection GradleDependency
+        classpath "com.android.tools.build:gradle:7.3.1"
+        classpath 'com.google.gms:google-services:4.3.14'
+    }
+}
+
+dependencies {
+    // Import the BoM for the Firebase platform
+    //implementation platform('com.google.firebase:firebase-bom:31.0.2')
+
+    // Add the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    //implementation 'com.google.firebase:firebase-database'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
